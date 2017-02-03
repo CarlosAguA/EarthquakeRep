@@ -43,8 +43,19 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
 
         // Find the TextView with view ID location
         TextView placeTextView = (TextView) listItemView.findViewById(R.id.tv2) ;
-        // Display the location of the current earthquake in that TextView
-        placeTextView.setText(currentQuake.getLocation());
+        TextView placeTwoTextView = (TextView) listItemView.findViewById(R.id.tv5) ;
+        String location = currentQuake.getLocation() ;
+        String stringPlaceHolder = "Near the" ;
+
+        //Condition for splitting the Location String in two different textViews
+        if ( location.contains("of") ){
+            String[] separated =  location.split("of");
+            placeTwoTextView.setText(separated[0] + "of");
+            placeTextView.setText(separated[1].trim());
+        } else{
+            placeTwoTextView.setText(stringPlaceHolder);
+            placeTextView.setText(currentQuake.getLocation());
+        }
 
         // Create a new Date object from the time in milliseconds of the earthquake
         Date dateObject = new Date(currentQuake.getTimeInMiliSeconds());

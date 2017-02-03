@@ -55,7 +55,6 @@ public final class QueryUtils {
             // build up a list of Earthquake objects with the corresponding data.
 
 
-            //Get the sample JSON String and assign it as the root.
             JSONObject root = new JSONObject(SAMPLE_JSON_RESPONSE);
             JSONArray featuresArray = root.getJSONArray("features");
 
