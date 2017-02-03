@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class EarthquakeActivity extends AppCompatActivity {
@@ -15,15 +17,12 @@ public class EarthquakeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_earthquake);
 
 
-        // Create a fake list of earthquake locations.
-        ArrayList<Earthquake> earthquakes = new ArrayList<>();
-        earthquakes.add(new Earthquake("2.5","San Francisco", "30-01-2017"));
-        earthquakes.add(new Earthquake("2.5","London", "30-01-2017"));
-        earthquakes.add(new Earthquake("2.5","Tokyo", "30-01-2017"));
-        earthquakes.add(new Earthquake("2.5","Mexico City", "30-01-2017"));
-        earthquakes.add(new Earthquake("2.5","Moscow", "30-01-2017"));
-        earthquakes.add(new Earthquake("2.5","Rio de Janeiro", "30-01-2017"));
-        earthquakes.add(new Earthquake("2.5", "Paris", "30-01-2017"));
+        /*
+        * Modify the EarthquakeActivity to call QueryUtils.extractEarthquakes()
+        * to get a list of Earthquake objects from the JSON response
+        */
+        // Create a fake list of earthquakes.
+        ArrayList<Earthquake> earthquakes = QueryUtils.extractEarthquakes();
 
 
         // Find a reference to the {@link ListView} in the layout

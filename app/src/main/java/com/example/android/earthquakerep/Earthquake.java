@@ -21,7 +21,7 @@ public class Earthquake {
     @param location the city location of the earthquake
     @param date is the date the earthquake happened.
      */
-    public Earthquake (String magnitude , String date, String location ){
+    public Earthquake (String magnitude , String location, String date ){
 
         this.mMagnitude = magnitude ;
         this.mDate = date ;
