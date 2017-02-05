@@ -8,39 +8,73 @@
 
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
                 android:id="@+id/tv1"
-                tools:text="@string/magnitude"/>
+                tools:text="@string/magnitude"
+                android:background="@drawable/magnitude_circle"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@android:color/white"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:textSize="16sp"/>
 
-            <TextView
-                 android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+             <TextView
+                 android:layout_width="wrap_content"
                  android:layout_height="wrap_content"
-                 android:layout_weight="1"
                  android:id="@+id/tv5"
+                 android:textSize="12sp"
+                 android:maxLines="1"
+                 android:ellipsize="end"
+                 android:fontFamily="sans-serif-medium"
+                 android:textAllCaps="true"
                  tools:text="@string/part2" />
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:id="@+id/tv2"
+                android:textSize="16sp"
                 tools:text="@string/place"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:id="@+id/tv3"
+                android:textSize="12sp"
                 tools:text="@string/date"/>
 
             <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:id="@+id/tv4"
+                android:textSize="12sp"
                 tools:text="@string/time"/>
+
+</LinearLayout>
 
         </LinearLayout>
 

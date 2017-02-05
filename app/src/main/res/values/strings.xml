@@ -22,7 +22,8 @@
     <string name="place">San Francisco</string>
     <string name="date">31/01/2017</string>
     <string name="time">11:59</string>
-    <string name="part2">part2</string>
+    <string name="part2">30km S of</string>
+    <string name="near_the">Near the</string>
 
 
 </resources>
