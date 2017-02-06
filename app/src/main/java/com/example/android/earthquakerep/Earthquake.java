@@ -17,24 +17,33 @@ public class Earthquake {
 
     private long mTimeInMiliSeconds ;
 
+    private String mUrl;
+
     /*
     *Constructs a new {@link earthquake} object
     @param magnitude is the magnitude (size) of the earthquake .
     @param location the city location of the earthquake
     @param timeInMilliseconds is the time in milliseconds (from the Epoch) when the earthquake happened
      */
-    public Earthquake (double magnitude , String location, long time){
+    public Earthquake (double magnitude , String location, long time , String url ){
 
         this.mMagnitude = magnitude ;
         this.mTimeInMiliSeconds = time ;
         this.mLocation = location;
+        this.mUrl = url ;
 
     }
 
+    /*
+   * Returns the time in miliseconds of the earthquake
+   */
     public long getTimeInMiliSeconds() {
         return mTimeInMiliSeconds;
     }
 
+    /*
+   * Returns the location of the earthquake
+   */
     public String getLocation() {
         return mLocation;
     }
@@ -46,5 +55,11 @@ public class Earthquake {
         return mMagnitude;
     }
 
+    /*
+    * Returns the url (Webpage information)
+    */
+    public String getUrl() {
+        return mUrl;
+    }
 
 }
