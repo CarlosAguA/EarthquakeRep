@@ -41,7 +41,7 @@ public final class QueryUtils {
      * Return a list of {@link Earthquake} objects that has been built up from
      * parsing a JSON response.
      */
-    public static ArrayList<Earthquake> extractEarthquakes() {
+    private static ArrayList<Earthquake> extractEarthquakes() {
 
         // Create an empty ArrayList that we can start adding earthquakes to
         ArrayList<Earthquake> earthquakes = new ArrayList<>();
@@ -58,18 +58,19 @@ public final class QueryUtils {
             JSONObject root = new JSONObject(SAMPLE_JSON_RESPONSE);
             JSONArray featuresArray = root.getJSONArray("features");
 
-            //Accessing traversal path
-            for (int i = 0; i < featuresArray.length(); i++) {
-                JSONObject earthquake = featuresArray.getJSONObject(i);
-                JSONObject features = earthquake.getJSONObject("properties");
-                double mag = features.getDouble("mag");
-                String place = features.getString("place");
-                String url = features.getString("url") ;
-                long time = features.getLong("time");
+            if (featuresArray.length() > 0) {
+                //Accessing traversal path
+                for (int i = 0; i < featuresArray.length(); i++) {
+                    JSONObject earthquake = featuresArray.getJSONObject(i);
+                    JSONObject features = earthquake.getJSONObject("properties");
+                    double mag = features.getDouble("mag");
+                    String place = features.getString("place");
+                    String url = features.getString("url");
+                    long time = features.getLong("time");
 
-                earthquakes.add(new Earthquake(mag, place, time , url ));
-            }
-
+                    earthquakes.add(new Earthquake(mag, place, time, url));
+                }
+        }
 
         } catch (JSONException e) {
             // If an error is thrown when executing any of the above statements in the "try" block,
